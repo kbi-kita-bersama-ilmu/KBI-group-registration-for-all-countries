@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17101f">
+<title>KBI International Registration</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  padding:24px 14px;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(ellipse at 5% 10%,#a91d3c 0%,transparent 40%),
+    radial-gradient(ellipse at 95% 25%,#6524a0 0%,transparent 42%),
+    radial-gradient(ellipse at 35% 100%,#55143f 0%,transparent 45%),
+    linear-gradient(135deg,#09090d,#211027,#111018);
+}
+
+.container{
+  width:100%;
+  max-width:500px;
+  margin:auto;
+  padding:24px;
+  border:1px solid #a855f7;
+  border-top:5px solid #ff2448;
+  border-radius:20px;
+  background:rgba(14,12,20,.95);
+  box-shadow:0 12px 45px #0009;
+}
+
+.brand{
+  margin:0;
+  text-align:center;
+  font-size:54px;
+  font-weight:900;
+  letter-spacing:7px;
+  color:#ff2448;
+  text-shadow:0 0 22px #ff244866;
+}
+
+h1{
+  text-align:center;
+  font-size:24px;
+  line-height:1.4;
+}
+
+.creator{
+  text-align:center;
+  color:#d8b4fe;
+  font-weight:bold;
+}
+
+.description{
+  text-align:center;
+  color:#ded7e7;
+  font-size:14px;
+  line-height:1.7;
+  margin:20px 0;
+}
+
+.languages{
+  display:flex;
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.languages button{
+  flex:1;
+  padding:11px 5px;
+  border:1px solid #8b5bb6;
+  border-radius:9px;
+  background:#21152c;
+  color:#fff;
+  cursor:pointer;
+}
+
+.languages button.active{
+  background:linear-gradient(110deg,#d91e40,#7625b7);
+  border-color:#fff;
+}
+
+label{
+  display:block;
+  margin:17px 0 8px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+input{
+  display:block;
+  width:100%;
+  padding:13px;
+  border:1px solid #65417e;
+  border-radius:9px;
+  background:#100d16;
+  color:#fff;
+  font-size:16px;
+}
+
+input:focus{
+  outline:2px solid #a855f7;
+}
+
+.hint{
+  color:#c9bbd7;
+  font-size:12px;
+  line-height:1.6;
+  margin-top:7px;
+}
+
+.submit{
+  width:100%;
+  margin-top:25px;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  background:linear-gradient(100deg,#f02043,#8b2be2);
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.submit:active{opacity:.8}
+
+footer{
+  margin-top:25px;
+  text-align:center;
+  font-size:12px;
+  line-height:1.9;
+  color:#b9aabe;
+}
+
+footer strong{color:#d8b4fe}
+
+@media(max-width:380px){
+  .container{padding:18px}
+  h1{font-size:21px}
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <header>
+    <p class="brand">KBI</p>
+    <h1 id="title">Pendaftaran KBI Seluruh Negara</h1>
+    <p class="creator">KBI dibuat oleh Rustan</p>
+    <p class="description" id="description">
+      Selamat datang! Isi formulir di bawah untuk mendaftar
+      menjadi anggota KBI.
+    </p>
+  </header>
+
+  <div class="languages">
+    <button type="button" id="idButton"
+      class="active" onclick="setLanguage('id')">
+      Bahasa Indonesia
+    </button>
+    <button type="button" id="enButton"
+      onclick="setLanguage('en')">
+      English
+    </button>
+  </div>
+
+  <form id="registrationForm">
+
+    <label for="name" id="nameLabel">Nama / Name</label>
+    <input id="name" name="name" type="text"
+      autocomplete="name" maxlength="100"
+      placeholder="Masukkan nama lengkap" required>
+
+    <label for="age" id="ageLabel">Umur / Age</label>
+    <input id="age" name="age" type="number"
+      inputmode="numeric" min="12" max="120"
+      placeholder="Minimal 12 tahun" required>
+
+    <label for="country" id="countryLabel">Negara / Country</label>
+    <input id="country" name="country" type="text"
+      autocomplete="country-name" maxlength="100"
+      placeholder="Contoh: Indonesia" required>
+
+    <label for="city" id="cityLabel">Kota / City</label>
+    <input id="city" name="city" type="text"
+      autocomplete="address-level2" maxlength="100"
+      placeholder="Masukkan nama kota" required>
+
+    <label for="phone" id="phoneLabel">
+      Nomor telepon / Telephone Number
+    </label>
+    <input id="phone" name="phone" type="tel"
+      inputmode="tel" autocomplete="tel"
+      maxlength="25" placeholder="Contoh: 081234567890"
+      required>
+
+    <p class="hint" id="hint">
+      Periksa kembali data kamu sebelum mendaftar.
+      Setelah Gmail terbuka, tekan Kirim untuk menyelesaikan
+      pendaftaran.
+    </p>
+
+    <button type="submit" class="submit" id="submitButton">
+      DAFTAR KBI
+    </button>
+  </form>
+
+  <footer>
+    <strong>KBI INTERNATIONAL</strong><br>
+    KBI dibuat oleh Rustan<br>
+    Email: kbikitabersamailmu@gmail.com
+  </footer>
+</main>
+
+<script>
+const emailTujuan = "kbikitabersamailmu@gmail.com";
+
+const translations = {
+  id:{
+    title:"Pendaftaran KBI Seluruh Negara",
+    description:"Selamat datang! Isi formulir di bawah untuk mendaftar menjadi anggota KBI.",
+    name:"Nama / Name",
+    namePlaceholder:"Masukkan nama lengkap",
+    age:"Umur / Age",
+    agePlaceholder:"Minimal 12 tahun",
+    country:"Negara / Country",
+    countryPlaceholder:"Contoh: Indonesia",
+    city:"Kota / City",
+    cityPlaceholder:"Masukkan nama kota",
+    phone:"Nomor telepon / Telephone Number",
+    phonePlaceholder:"Contoh: 081234567890",
+    hint:"Periksa kembali data kamu sebelum mendaftar. Setelah Gmail terbuka, tekan Kirim untuk menyelesaikan pendaftaran.",
+    submit:"DAFTAR KBI",
+    ageError:"Umur pendaftar harus minimal 12 tahun.",
+    invalidAge:"Masukkan umur yang valid.",
+    subject:"Pendaftaran KBI",
+    opening:"Draf email sedang disiapkan. Periksa data dan tekan Kirim di aplikasi email."
+  },
+  en:{
+    title:"KBI International Registration",
+    description:"Welcome! Complete the form below to register as a KBI member.",
+    name:"Name / Nama",
+    namePlaceholder:"Enter your full name",
+    age:"Age / Umur",
+    agePlaceholder:"Minimum age: 12",
+    country:"Country / Negara",
+    countryPlaceholder:"Enter your country",
+    city:"City / Kota",
+    cityPlaceholder:"Enter your city",
+    phone:"Telephone Number / Nomor telepon",
+    phonePlaceholder:"Example: 081234567890",
+    hint:"Please check your details before registering. When your email app opens, press Send to complete your registration.",
+    submit:"REGISTER FOR KBI",
+    ageError:"Applicants must be at least 12 years old.",
+    invalidAge:"Please enter a valid age.",
+    subject:"KBI Registration",
+    opening:"Your email draft is being prepared. Check your details and press Send in your email app."
+  }
+};
+
+let language = "id";
+
+function setLanguage(lang){
+  language = lang;
+  const t = translations[lang];
+
+  document.documentElement.lang = lang;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("description").textContent = t.description;
+  document.getElementById("nameLabel").textContent = t.name;
+  document.getElementById("name").placeholder = t.namePlaceholder;
+  document.getElementById("ageLabel").textContent = t.age;
+  document.getElementById("age").placeholder = t.agePlaceholder;
+  document.getElementById("countryLabel").textContent = t.country;
+  document.getElementById("country").placeholder = t.countryPlaceholder;
+  document.getElementById("cityLabel").textContent = t.city;
+  document.getElementById("city").placeholder = t.cityPlaceholder;
+  document.getElementById("phoneLabel").textContent = t.phone;
+  document.getElementById("phone").placeholder = t.phonePlaceholder;
+  document.getElementById("hint").textContent = t.hint;
+  document.getElementById("submitButton").textContent = t.submit;
+
+  document.getElementById("idButton").classList.toggle("active",lang==="id");
+  document.getElementById("enButton").classList.toggle("active",lang==="en");
+}
+
+document.getElementById("registrationForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const t = translations[language];
+  const name = document.getElementById("name").value.trim();
+  const ageValue = document.getElementById("age").value;
+  const age = Number(ageValue);
+  const country = document.getElementById("country").value.trim();
+  const city = document.getElementById("city").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+
+  if(!ageValue || !Number.isFinite(age) || age < 12 || age > 120){
+    alert(t.ageError);
+    return;
+  }
+
+  const subject = t.subject + " - " + name;
+  const body =
+`PENDAFTARAN KBI / KBI REGISTRATION
+KBI dibuat oleh Rustan
+
+Nama / Name: ${name}
+Umur / Age: ${age}
+Negara / Country: ${country}
+Kota / City: ${city}
+Nomor telepon / Telephone Number: ${phone}
+
+Saya mengirim data ini untuk mendaftar KBI.
+I am submitting these details to register for KBI.
+
+Terima kasih / Thank you.
+`;
+
+  const mailto = "mailto:" + emailTujuan
+    + "?subject=" + encodeURIComponent(subject)
+    + "&body=" + encodeURIComponent(body);
+
+  // Membuka aplikasi email yang tersedia pada perangkat.
+  window.location.href = mailto;
+});
+</script>
+</body>
+  </html>
+  
